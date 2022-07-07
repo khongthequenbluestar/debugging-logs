@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ducta11-kubernetes-debugging-logs
+  labels:
+    app: ducta11-kubernetes-debugging-logs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ducta11-kubernetes-debugging-logs
+  template:
+    metadata:
+      labels:
+        app: ducta11-kubernetes-debugging-logs
+    spec:
+      containers:
+      - name: debugging-logs
+        image: khongthequenbluestar/debugging-logs
+        ports:
+        - containerPort: 8080

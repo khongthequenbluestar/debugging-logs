@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: ducta11-kubernetes-debugging-logs
+  name: ducta11-kubernetes-debugging-logs-svc
+  namespace: default
+  selfLink: /api/v1/namespaces/default/services/ducta11-kubernetes-debugging-logs-svc
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: ducta11-kubernetes-debugging-logs
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
